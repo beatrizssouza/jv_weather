@@ -13,6 +13,7 @@ export const homeInitalState: HomeState = {
 }
 const reducer = createReducer(
     homeInitalState,
+    on(fromHomeActions.clearHomeState,() => homeInitalState),
     on(fromHomeActions.loadCurrentWeather,state => ({
         ...state,
         loading:true,
